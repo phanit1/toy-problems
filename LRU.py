@@ -1,6 +1,4 @@
-class LRU:
-    def __init__(self,capacity):
+class LRUCache:
+    def __init__(self):
         self.cache = []
-        self.capacity = capacity
-    lru = LRU()
-
+        self.capacity = 4
