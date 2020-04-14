@@ -1,5 +1,5 @@
 class LRUCache:
-    def __init__(self):
+    def __init__(self,capacity):
         self.cache = []
         self.capacity = 4
     def put(self,item):
