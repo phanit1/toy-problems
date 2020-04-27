@@ -1,0 +1,36 @@
+<html>
+   <head>   
+      <script type = "text/javascript">
+         function countBs(str)
+         {
+            var letter_Count = 0;
+            for (var position = 0; position < str.length; position++) 
+            {
+               if (str.charAt(position) == 'B') 
+               {
+                  letter_Count += 1;
+               }
+            }
+            document.getElementById("textdisplay").innerHTML="Count of B in "+str+" is "+letter_Count;
+         }
+         function countChar(str, letter) 
+         {
+         var letter_Count = 0;
+         for (var position = 0; position < str.length; position++) 
+         {
+            if (str.charAt(position) == letter) 
+               {
+               letter_Count += 1;
+               }
+         }
+         
+         document.getElementById("textdisplay").innerHTML="Count of "+letter+" in "+str+" is "+letter_Count;
+      }
+      </script>
+   </head>
+   <body>
+         <input type = "button" onclick = "countChar('Phaneendhar', 'e')" value = "Get count">
+         <input type = "button" onclick = "countBs('Balloons are big')" value = "Get count of B">
+         <p id = "textdisplay"></p>
+   </body>
+</html>
