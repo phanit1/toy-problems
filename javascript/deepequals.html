@@ -1,0 +1,31 @@
+<html>
+   <head>   
+      <script type = "text/javascript">
+      function deepEquals(obj1, obj2) {
+        if (obj1 === obj2) {
+          document.getElementById("textdisplay").innerHTML=(true);
+        }
+        else if ((typeof obj1 == "object" && obj1 != null) && (typeof obj2 == "object" && obj2 != null)) {
+          if (Object.keys(obj1).length != Object.keys(obj2).length)
+            document.getElementById("textdisplay").innerHTML=(false);
+          for (var prop in obj1) {
+            if (obj2.hasOwnProperty(prop))
+            {  
+              if (! deepEquals(obj1[prop], obj2[prop]))
+                document.getElementById("textdisplay").innerHTML=(false);
+            }
+            else
+              document.getElementById("textdisplay").innerHTML=(false);
+          }
+          document.getElementById("textdisplay").innerHTML=(true);
+        }
+        else 
+          document.getElementById("textdisplay").innerHTML=(false);
+      }
+      </script>
+   </head>
+   <body>
+        <input type = "button" onclick = "deepEquals(2,'2')" value = "Object comparision">
+        <p id = "textdisplay"></p>
+    </body>
+</html>
